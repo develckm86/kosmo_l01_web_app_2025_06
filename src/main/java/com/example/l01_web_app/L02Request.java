@@ -12,6 +12,10 @@ import java.io.PrintWriter;
 @WebServlet(value = "/l02request.do")
 public class L02Request extends HttpServlet {
     @Override
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        doGet(req, resp);
+    }
+    @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         //url : 클라이언트의 요청 (클라이언트가 요청하는 리소스의 위치)
         //url?param=안녕&param2=1.... : 쿼리스트링 (동적리스소에게 이 파라미터로 데이터를 처리해서 주세요!)
@@ -26,7 +30,7 @@ public class L02Request extends HttpServlet {
         resp.setContentType("text/html;charset=UTF-8");
         PrintWriter out=resp.getWriter();
         out.println("<html>");
-        out.println("<h1>요청한 a,b 파라미터 처리</h1>");
+        out.println("<h1 style='color:red;'>요청한 a,b 파라미터 처리</h1>");
         out.println("<p> a:"+aStr+"</p>");
         out.println("<p> b:"+bStr+"</p>");
         out.println("<p> aStr+bStr:"+(aStr+bStr)+"</p>");

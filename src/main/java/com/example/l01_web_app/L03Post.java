@@ -27,5 +27,7 @@ public class L03Post extends HttpServlet {
         resp.setCharacterEncoding("UTF-8");
         resp.setContentType("text/html;charset=UTF-8");
         resp.getWriter().write("<h1>"+msg+"</h1>");
+        resp.getWriter().write("<h2>다시배포테스트</h2>");
+
     }
 }

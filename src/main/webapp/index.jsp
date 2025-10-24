@@ -40,6 +40,42 @@
         <button>로그인</button>
     </p>
 </form>
+<hr>
+<h2>JSP JavaServerPage</h2>
+<p><a href="l04jsp.jsp">jsp 문서 호출</a></p>
+<p>
+    <a href="l05jspParam.jsp?id=a_1234&name=경민">
+        jsp 파라미터 전달 및 호출
+    </a>
+</p>
+<div>
+    <h3>l05jspParam.jsp을 post 방식으로 호출</h3>
+    <form action="l05jspParam.jsp" method="POST">
+        <p>
+            <label>id :
+                <input name="id" value="id_test_123" type="text">
+            </label>
+        </p>
+        <p>
+            <label>name :
+                <input name="name" value="경민코딩" type="text">
+            </label>
+        </p>
+        <p>
+            <button type="button">버튼</button>
+            <button type="reset">리셋</button>
+            <button type="submit">제출</button>
+            <input type="submit" value="제출2">
+        </p>
+    </form>
+    <hr>
+
+
+</div>
+
+
+
+
 <br><br><br><br><br><br><br><br><br><br>
 <%--/Users/som/Downloads/apache-tomcat-11.0.13/bin
 /Users/som/Downloads/apache-tomcat-11.0.13/bin/catalina.sh
