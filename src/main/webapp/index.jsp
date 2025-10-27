@@ -84,7 +84,25 @@
 <hr>
 <h2>리다이렉트 : 서버 내부에서 다른 페이지로 이동 (302)</h2>
 <p><a href="l08redirect.do">리다이렉트</a></p>
+<p><a href="l09login_form.jsp">로그인폼</a></p>
+<%
+String loginResultStr=request.getParameter("loginResult");
+//null, "falsess","t" => 오류
+try{
+    boolean loginResult=Boolean.parseBoolean(loginResultStr);
+    if(loginResult){
+        //out.println("<script>alert('로그인 성공')</script>");
+    %>
+        <script>
+            alert("로그인 성공!")
+        </script>
+    <%
+    }
+}   catch (Exception e){
+    e.printStackTrace(); //오류는 무시
+}
 
+%>
 
 
 <br><br><br><br><br><br><br><br><br><br>
