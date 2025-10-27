@@ -68,13 +68,19 @@
             <input type="submit" value="제출2">
         </p>
     </form>
-    <hr>
-
-
 </div>
+<hr>
+<h2>forward로 jsp 를 뷰로 사용하자!</h2>
+<%
+    //contextPath : 톰캣에서 여러웹앱을 구분하기 위해 만든경로
+    String contextPath=request.getContextPath();
+    // "/l01_web_app_war_exploded"
+%>
 
+<p><a href="<%=contextPath%>/l06forward.do">포워드</a></p>
+<%--<p><a href="l06forward.do">포워드</a></p>--%>
 
-
+<p><a href="l07users.do">유저리스트</a></p>
 
 <br><br><br><br><br><br><br><br><br><br>
 <%--/Users/som/Downloads/apache-tomcat-11.0.13/bin

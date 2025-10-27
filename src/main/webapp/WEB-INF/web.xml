@@ -3,4 +3,13 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee https://jakarta.ee/xml/ns/jakartaee/web-app_6_0.xsd"
          version="6.0">
+<!--  @WebServlet("/l06forward.do") : 어노테이션은 대부분 편리함 -->
+    <servlet>
+        <servlet-name>L06Forward</servlet-name>
+        <servlet-class>com.example.l01_web_app.L06Forward</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>L06Forward</servlet-name>
+        <url-pattern>/l06forward.do</url-pattern>
+    </servlet-mapping>
 </web-app>
