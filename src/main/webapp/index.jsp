@@ -81,6 +81,11 @@
 <%--<p><a href="l06forward.do">포워드</a></p>--%>
 
 <p><a href="l07users.do">유저리스트</a></p>
+<hr>
+<h2>리다이렉트 : 서버 내부에서 다른 페이지로 이동 (302)</h2>
+<p><a href="l08redirect.do">리다이렉트</a></p>
+
+
 
 <br><br><br><br><br><br><br><br><br><br>
 <%--/Users/som/Downloads/apache-tomcat-11.0.13/bin

@@ -22,8 +22,10 @@
         //PrintWriter out=response.getWriter()
         String id=request.getParameter("id");
         String name=request.getParameter("name");
-        out.println("<p> id : "+id+"</p>");
-        out.println("<p> name : "+name+"</p>");
+        //out.println("<p> id : "+id+"</p>");
+        //out.println("<p> name : "+name+"</p>");
     %>
+    <p>id : <%=id%></p>
+    <p>name : <%=name%></p>
 </body>
 </html>
