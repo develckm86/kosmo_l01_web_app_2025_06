@@ -7,20 +7,21 @@
     <h1>자바스크립트로 쿠키 생성후 팝업창 제어</h1>
     <script>
         function showPopup(){
-            let cookiesStr=document.cookie; ///key=value; key2=value2; ....
-            let cookies=cookiesStr.split(";")
-            //console.log(cookies) //['hidePopup=1', ' jsHidePopup=1']
-
             let jsHidePopupCookie=null;
 
-            for(let c of cookies){
-                let cArr=c.split("=");
-                let name=cArr[0].trim();
-                let value=cArr[1].trim();
-                console.log(name,value)
-                if(name==="jsHidePopup"){
-                    jsHidePopupCookie=value;
-                    break;
+            let cookiesStr=document.cookie; ///key=value; key2=value2; ....
+            if(cookiesStr){ //Boolean("",null)  false
+                let cookies=cookiesStr.split(";")
+                //console.log(cookies) //['hidePopup=1', ' jsHidePopup=1']
+                for(let c of cookies){
+                    let cArr=c.split("=");
+                    let name=cArr[0].trim();
+                    let value=cArr[1].trim();
+                    console.log(name,value)
+                    if(name==="jsHidePopup"){
+                        jsHidePopupCookie=value;
+                        break;
+                    }
                 }
             }
             //js는 equals가 존재하지 않음. 기본형만 비교가능 문자열은 자바와 달리 기본형

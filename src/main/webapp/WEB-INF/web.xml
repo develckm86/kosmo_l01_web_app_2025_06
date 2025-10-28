@@ -12,4 +12,8 @@
         <servlet-name>L06Forward</servlet-name>
         <url-pattern>/l06forward.do</url-pattern>
     </servlet-mapping>
+    <!-- 세션 만료시간!   -->
+    <session-config>
+        <session-timeout>10</session-timeout>
+    </session-config>
 </web-app>

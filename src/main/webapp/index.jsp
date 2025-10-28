@@ -110,6 +110,25 @@ try{
 <p><a href="l10get_cookie.do">쿠키 가져오기</a></p>
 <p><a href="l11cookie_home.jsp">쿠키 팝업 홈</a></p>
 <p><a href="l12js_cookie_home.jsp">자바스크립트 쿠키 팝업 홈</a></p>
+<hr>
+<h2>서버에 유지되는 객체 세션</h2>
+<p>브라우저에 남겨놓은 고유 아이디로 세션을 찾아서 동적리소스에서 사용!!</p>
+<p><a href="l13add_session.do">세션 저장(userId=sum1234,userPw=7777)</a></p>
+<%
+    String loginUserId=null;
+    Integer loginUserPw=null;
+    Object loginUserIdObj=session.getAttribute("userId");
+    Object loginUserPwObj=session.getAttribute("userPw");
+    try {
+        if(loginUserIdObj!=null)loginUserId=(String) loginUserIdObj;
+        if(loginUserPwObj!=null)loginUserPw=(Integer) loginUserPwObj;
+    } catch (Exception e) {
+        e.printStackTrace();
+    }
+
+%>
+<p>로그인 한 유저  (<%=loginUserId%>/<%=loginUserPw %>) </p>
+<p><a href="l13remove_session.do">세션삭제(로그아웃)</a></p>
 
 
 
