@@ -26,13 +26,16 @@ public class L06Forward extends HttpServlet {
         names.add("혜찌");
         names.add("까은");
         names.add("현태");
-//        resp.setContentType("text/html;charset=utf-8");
-//        PrintWriter out = resp.getWriter();
-//        out.println("<ul>");
-//        for (String name : names) {
-//            out.println("<li>이름 :"+name+"</li>");
-//        }
-//        out.println("</ul>");
+        resp.setContentType("text/html;charset=utf-8");
+        PrintWriter out = resp.getWriter();
+        out.println("<style>");
+        out.println("body{margin:0}");
+        out.println("</style>");
+        out.println("<ul>");
+        for (String name : names) {
+            out.println("<li>이름 :"+name+"</li>");
+        }
+        out.println("</ul>");
         //포워드할 view에 객체 전달!!!
         req.setAttribute("names",names); //Object
         req.getRequestDispatcher("/WEB-INF/views/l06forward.jsp")

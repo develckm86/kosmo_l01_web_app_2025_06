@@ -3,6 +3,12 @@
 <html>
 <head>
     <title>유저 이름 조회</title>
+    <style>
+        body{
+            padding: 0;
+            margin: 0;
+        }
+    </style>
 </head>
 <body>
     <%
@@ -14,7 +20,7 @@
     <hr>
     <ul>
         <%for(String name: names){%>
-            <li>이름은 <%=name%></li>
+            <li style="color: aquamarine">이름은 <%=name%></li>
         <%}%>
     </ul>
 </body>
