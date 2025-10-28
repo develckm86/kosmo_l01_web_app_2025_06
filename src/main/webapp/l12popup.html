@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>광고창!!</title>
+</head>
+<body>
+    <h1>광고입니다.</h1>
+    <p>smu kosmo 수업 들으세요~</p>
+    <p>
+        <button id="addHidePopupBtn">일주일간 보지 않기</button>
+    </p>
+    <script>
+        const addHidePopupBtn=document.getElementById("addHidePopupBtn");
+
+        const addCookie=(maxAge)=>{
+            //expireSec=>60*60
+            //key=value;expires=date.toUTCString();max-age=60*60*24.;path=/
+            const now=new Date();
+            now.setTime(now.getTime()+(1000*maxAge));
+            document.cookie="jsHidePopup=1;expires="+now.toUTCString()+";max-age="+maxAge;
+        }
+        //addHidePopupBtn.onclick=addCookie; //click 이벤트가 1개만 있을때
+        addHidePopupBtn.addEventListener("click",()=>{
+            addCookie(60*60*24*7);
+            window.close();
+        }); //여러개의 click 이벤트를 정의
+
+    </script>
+</body>
+</html>

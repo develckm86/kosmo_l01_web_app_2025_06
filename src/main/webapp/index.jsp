@@ -109,6 +109,7 @@ try{
 <p><a href="l10cookie.do">쿠키만들기</a></p>
 <p><a href="l10get_cookie.do">쿠키 가져오기</a></p>
 <p><a href="l11cookie_home.jsp">쿠키 팝업 홈</a></p>
+<p><a href="l12js_cookie_home.jsp">자바스크립트 쿠키 팝업 홈</a></p>
 
 
 
