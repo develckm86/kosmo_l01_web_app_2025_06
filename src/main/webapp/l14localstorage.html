@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>로컬 저장소</title>
+</head>
+<body>
+    <h1>로컬 저장소 저장 및 조회</h1>
+    <p>비동기 동작을 위해 많이 사용됨(장바구니)</p>
+    <hr>
+    <h2>유저 정보 로컬스토리지 저장</h2>
+    <form action="#" name="userForm">
+        <p><label>아이디 : <input type="text" name="id" value="a1234"></label></p>
+        <p><label>이름 : <input type="text" name="name" value="최경만"></label></p>
+        <p><label>나이 : <input type="text" name="age" value="39"></label></p>
+        <p><button type="submit">저장</button></p>
+    </form>
+    <hr>
+    <h2>저장된 유저 조회 <button type="button" id="loadUsers">로컬 유저리스트 조회</button></h2>
+    <div id="usersContainer">
+
+    </div>
+    <script>
+        const loadUsers=document.getElementById("loadUsers");
+        const usersContainer=document.getElementById("usersContainer");
+        loadUsers.addEventListener("click",()=>{
+            let users=localStorage.getItem("users");
+            if(!users){
+                usersContainer.innerText="자료없음";
+                return;
+            }
+            users=JSON.parse(users);
+            usersContainer.innerHTML="";//내용비우기!
+            users.forEach((u)=>{
+                let p=document.createElement("p");
+                p.append(JSON.stringify(u));
+                usersContainer.append(p);
+            });
+        });
+        const userForm=document.forms["userForm"];
+        function User(id,name,age){
+            this.id=id;
+            this.name=name;
+            this.age=age;
+        }
+        userForm.onsubmit=(e)=>{
+            e.preventDefault();
+            let id=userForm.id.value;
+            let name=userForm.name.value;
+            let age=Number(userForm.age.value); // "13"=>13 파싱
+            if(!id || !name || Number.isNaN(age)){
+                alert("아이디와 이름 나이를 꼭 입력하시고 나이는 숫자입니다.");
+                return;
+            }
+            console.log(id,name,age);
+            // const obj={id:id,name:name,age:age};
+            const user=new User(id,name,age);
+            console.log(user);
+            let existUsers=localStorage.getItem("users");
+            if(existUsers==null){//최초등록
+                existUsers="[]";
+            }
+            existUsers=JSON.parse(existUsers);
+            //[], [{},{}]
+            //이미 저장되어 있다면 => 바꾸기
+            //저장되어 있지 않다면 => 생성
+            // for(let u of existUsers){
+            //     if(u.id===id){//이미 저장되어 있다면
+            //
+            //     }
+            // }
+            existUsers.forEach((u,i,arr)=>{
+                if(u.id===id){
+                    existUsers.splice(i,1);
+                    console.log(i+"번째 삭제")
+                }
+            })
+
+            existUsers.push(user);
+            console.log(existUsers);
+            localStorage.setItem("users",JSON.stringify(existUsers));
+        }
+        //users= [{id:'a1234',name:'최경만',age:39},{....},{....},...]
+
+
+        localStorage.setItem("name","경민");
+        //저장
+        let name=localStorage.getItem("name");
+        //호출
+        console.log(name)
+    </script>
+
+</body>
+</html>

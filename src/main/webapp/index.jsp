@@ -129,7 +129,8 @@ try{
 %>
 <p>로그인 한 유저  (<%=loginUserId%>/<%=loginUserPw %>) </p>
 <p><a href="l13remove_session.do">세션삭제(로그아웃)</a></p>
-
+<hr>
+<p><a href="l14localstorage.html">로컬스토리지</a></p>
 
 
 <br><br><br><br><br><br><br><br><br><br>

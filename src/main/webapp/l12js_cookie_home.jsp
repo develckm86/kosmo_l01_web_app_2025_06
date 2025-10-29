@@ -32,15 +32,15 @@
 
         showPopup();
 
-        <%--function addCookie(){--%>
-        <%--    const now=new Date();--%>
-        <%--    //1000*60 :60초--%>
-        <%--    console.log(now.toUTCString())--%>
-        <%--    now.setTime(now.getTime()+(1000*60*60));--%>
-        <%--    console.log(now.toUTCString());--%>
-        <%--    document.cookie =--%>
-        <%--        `js_hide_popup=1;expires=${now.toUTCString()};max-age=${60*60*24}`;--%>
-        <%--}--%>
+        function addCookie(){
+            const now=new Date();
+            //1000*60 :60초
+            console.log(now.toUTCString())
+            now.setTime(now.getTime()+(1000*60*60));
+            console.log(now.toUTCString());
+            document.cookie =
+                `js_hide_popup=1;expires=${now.toUTCString()};max-age=${60*60*24}`;
+        }
         //addCookie();
     </script>
 </body>
